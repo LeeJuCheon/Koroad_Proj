@@ -487,6 +487,8 @@ function initTmap() {
             },
             success: function (response) {
 
+              //$("#result5").html(JSON.stringify(response));   //경로 JSON 데이터
+
               var resultData = response.features;
 
               var tDistance = "총 거리 : "
@@ -505,6 +507,25 @@ function initTmap() {
               $("#result").text(
                 tDistance + tTime + tFare
                 + taxiFare);
+              ////////////////////////////////////////////////////////////////////////////////////////
+              var RoadName = '';
+              var num = 1;
+
+              for (var i in resultData) {
+                var geometry = resultData[i].geometry;
+                var properties = resultData[i].properties;
+                if (geometry.type == "LineString") {
+                  //경로 도로명 나열
+                  RoadName += num + " : " + properties.name + "\n";
+                  num += 1;
+                }
+              }
+
+              $("#result5").html(RoadName);
+
+
+              ////////////////////////////////////////////////////////////////////////////////////////
+
 
               //교통정보 표출 옵션값을 체크
               if (trafficInfochk == "Y") {
