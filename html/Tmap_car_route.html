@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>simpleMap</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=l7xxb7f655f2345248f7b5d6f198531b219a"></script>
+  <script type="text/javascript" src="../js/js_car_route.js"></script>
+</head>
+
+<body onload="initTmap();">
+  <div class="ft_area">
+    <div class="ft_select_wrap">
+      <div class="ft_select">
+        <select id="selectLevel">
+          <option value="0" selected="selected">교통최적+추천</option>
+          <option value="1">교통최적+무료우선</option>
+          <option value="2">교통최적+최소시간</option>
+          <option value="3">교통최적+초보</option>
+          <option value="4">교통최적+고속도로우선</option>
+          <option value="10">최단거리+유/무료</option>
+          <option value="12">이륜차도로우선</option>
+          <option value="19">교통최적+어린이보호구역 회피</option>
+        </select> <select id="year">
+          <option value="N" selected="selected">교통정보 표출 옵션</option>
+          <option value="Y">Y</option>
+          <option value="N">N</option>
+        </select>
+        <p><label> 출발지 : <input type="text" class="text_custom" id="fullAddr1" name="fullAddr1"
+              value="서울시 마포구 와우산로29가길 69"></label></p>
+        <p><label> 도착지 : <input type="text" class="text_custom" id="fullAddr2" name="fullAddr2"
+              value="서울시 송파구 송파대로34가길 32"></label></p>
+        <button id="btn_select">적용하기</button>
+      </div>
+    </div>
+    <div class="map_act_btn_wrap clear_box"></div>
+    <div class="clear"></div>
+  </div>
+
+  <div id="map_wrap" class="map_wrap">
+    <div id="map_div"></div>
+  </div>
+  <div class="map_act_btn_wrap clear_box"></div>
+  <p id="result"></p>
+  <p id="result2"></p>
+  <p id="result3"></p>
+  <br />
+</body>
+
+</html>
