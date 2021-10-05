@@ -200,7 +200,7 @@ for col in ['Year', 'Month', 'Day', 'Hour', 'EPDO']:
 pretrain2['X'] = copytrain2['X_POINT']
 pretrain2['Y'] = copytrain2['Y_POINT']
 
-# 데이터프레임 확인23123
+# 데이터프레임 확인
 pretrain2.head()
 pretrain2.info()           # 데이터 정보 확인
 pretrain2.isnull().sum()  # 각 Column별 NULL 값 개수 확인
